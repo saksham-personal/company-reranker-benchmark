@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "machine_role": "vdi",
+  "description": "Run jobs serially. Stage one retrieves up to 1000; the reranker scores only the original top 500. SciFact uses 100 as an additional public protocol tier.",
+  "jobs": [
+    {
+      "name": "company-controlled-rich",
+      "dataset": "data/controlled-company-screening",
+      "candidates": "configs/candidates/controlled-company-bm25.json",
+      "representation": "rich",
+      "models": ["ettin-17m", "ettin-32m", "jina-turbo-en", "ettin-68m", "gte-modernbert-base", "ettin-150m"],
+      "quality": {"rerank_depth": 500, "max_length": 512, "threads": 8, "batch_size": 8},
+      "speed": {"rerank_depth": 500, "max_length": 512, "threads": 8, "batch_size": 8, "query_limit": 20, "rounds": 3, "warmups": 1}
+    },
+    {
+      "name": "company-public-pilot",
+      "dataset": "data/public-company-pilot",
+      "candidates": "configs/candidates/public-company-pilot-bm25.json",
+      "representation": "rich",
+      "models": ["ettin-17m", "ettin-32m", "jina-turbo-en", "ettin-68m", "gte-modernbert-base", "ettin-150m"],
+      "quality": {"rerank_depth": 500, "max_length": 512, "threads": 8, "batch_size": 8}
+    },
+    {
+      "name": "scifact-test-r100",
+      "dataset": "{work}/datasets/beir-scifact",
+      "candidates": "configs/candidates/scifact-bm25.json",
+      "representation": "description_only",
+      "models": ["ettin-17m", "ettin-32m", "jina-turbo-en", "ettin-68m", "gte-modernbert-base", "ettin-150m"],
+      "quality": {"rerank_depth": 100, "max_length": 512, "threads": 8, "batch_size": 8}
+    },
+    {
+      "name": "company-long-rich",
+      "dataset": "data/long-context-adversarial",
+      "candidates": "configs/candidates/long-context-bm25.json",
+      "representation": "rich",
+      "models": ["ettin-17m", "ettin-32m", "jina-turbo-en", "ettin-68m", "gte-modernbert-base", "ettin-150m"],
+      "quality": {"rerank_depth": 500, "max_length": 4096, "threads": 8, "batch_size": 2}
+    }
+  ]
+}

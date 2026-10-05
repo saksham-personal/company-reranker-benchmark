@@ -1,0 +1,13 @@
+{
+  "dataset_id": "controlled-company-screening-v1",
+  "diagnostics": false,
+  "files": {
+    "corpus.jsonl": "7f115cdba07e8154d22878419b71aee6211d534fec0faa84e8fa631a50f0dbfd",
+    "qrels.tsv": "6cbfc83f14e907e408f8489eb12ae06fed0e8af2e51b6df7197ecbe788faf41a",
+    "queries.jsonl": "0fe99052592e3f29431685fcde5412ab22e7e609b27ad2af389c8229a3fa2980"
+  },
+  "license": "CC0-1.0",
+  "qrels_complete": true,
+  "schema_version": 1,
+  "source": "Converted without changing the prior Company Embedding Benchmark controlled-v1 labels, seed 20261002; original source and hard-negative rationale records are in ../controlled-source-original/."
+}

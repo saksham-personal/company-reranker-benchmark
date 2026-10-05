@@ -1,0 +1,7 @@
+{"_id": "diag-q-00", "category": "explicit_exclusion", "judgement_scope": "constructed_evidence_only", "text": "Find industrial filtration for chemical plants; exclude direct sales to consumers."}
+{"_id": "diag-q-01", "category": "mixed_b2b_b2c", "judgement_scope": "constructed_evidence_only", "text": "Find employer payroll software; exclude any company offering consumer tax filing."}
+{"_id": "diag-q-02", "category": "negation", "judgement_scope": "constructed_evidence_only", "text": "Find suppliers to manufacturers that do not serve individual consumers."}
+{"_id": "diag-q-03", "category": "attribute_conjunction", "judgement_scope": "constructed_evidence_only", "text": "Find cold-chain food logistics with temperature monitoring for hospitals."}
+{"_id": "diag-q-04", "category": "parent_subsidiary", "judgement_scope": "constructed_evidence_only", "text": "Find the subsidiary that directly performs laboratory materials testing for manufacturers."}
+{"_id": "diag-q-05", "category": "semantic_capability", "judgement_scope": "constructed_evidence_only", "text": "Find industrial coatings suppliers offering predictive maintenance for factories."}
+{"_id": "diag-q-06", "category": "customer_scope", "judgement_scope": "constructed_evidence_only", "text": "Find medical scheduling software sold to community hospitals, excluding direct patient subscriptions."}

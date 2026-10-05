@@ -1,0 +1,13 @@
+{
+  "dataset_id": "long-context-adversarial-v1",
+  "diagnostics": true,
+  "files": {
+    "corpus.jsonl": "1a30f50ad6e430bc99405c7cfd5d9bb2bd623bdc612c49827be0d516072c3f7d",
+    "qrels.tsv": "86cfb9998c0b54bad490100401af9330ff86f7ae49911893482ea4dc2d2b512b",
+    "queries.jsonl": "9c2a0a9606b20deccdce3935ed6b4cbd3e02bd433233ef14c0bb2e1a8f68e60c"
+  },
+  "license": "CC0-1.0",
+  "qrels_complete": false,
+  "schema_version": 1,
+  "source": "Synthetic 7-query/56-document diagnostics labeled by construction. Explicit unknown cases are in decision_annotations.jsonl and omitted from qrels; this tests failure modes, not real-world accuracy."
+}

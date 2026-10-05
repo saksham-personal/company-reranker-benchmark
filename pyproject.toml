@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "company-reranker-benchmark"
+version = "1.0.0"
+description = "Offline CPU reranker evaluation for company screening"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "numpy==2.4.3", "psutil==7.1.3", "torch==2.9.1",
+  "transformers==5.7.0", "sentence-transformers==5.4.1",
+  "einops==0.8.2", "onnxruntime==1.24.4",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.0.3"]
+export = ["onnx==1.20.1"]
+
+[project.scripts]
+reranker-bench = "reranker_bench.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/reranker_bench"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }

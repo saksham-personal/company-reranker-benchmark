@@ -1,0 +1,19 @@
+{
+  "company_count": 2400,
+  "dataset_id": "controlled-company-screening-v1",
+  "description_target_words": null,
+  "files": {
+    "companies.jsonl": "2a81e6c15b95a3863ed2bbb14ed384af008aea552c2583b73763218a56578a05",
+    "hard_negatives.jsonl": "238163900030cc8e5a5260467fdeaad1dc4f9494e74624afb3969809c60b17b8",
+    "qrels.tsv": "85b6f28b6d6d7d83859160e3a40dbf36f3ebfdb053fa910e53b805115e021d33",
+    "queries.jsonl": "799e0e4dbbf231184c8fb43a21cedfbdda72d72f8d917e34706686170d860436",
+    "sources.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "generator": "controlled-v1",
+  "judgement_completeness": "exhaustive",
+  "license": "CC0-1.0",
+  "query_count": 120,
+  "schema_version": 1,
+  "seed": 20261002,
+  "track": "controlled"
+}

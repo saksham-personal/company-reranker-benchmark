@@ -1,0 +1,1186 @@
+{
+  "models": {
+    "ettin-17m": {
+      "repo_id": "cross-encoder/ettin-reranker-17m-v1",
+      "revision": "9e4aa35321a6dd1a43ca313f500c4b4f7cfb5cc6",
+      "siblings": [
+        {
+          "rfilename": ".gitattributes",
+          "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "size": 1519
+        },
+        {
+          "rfilename": "1_Pooling/config.json",
+          "blobId": "a9eb7805d3781957dbff421f9ab616dcde415448",
+          "size": 89
+        },
+        {
+          "rfilename": "2_Dense/config.json",
+          "blobId": "44ab5252a385f43a1b5deaa291fa034573bc96b8",
+          "size": 228
+        },
+        {
+          "rfilename": "2_Dense/model.safetensors",
+          "blobId": "bed97488b85ca145432460b404e4a2fe041e2942",
+          "size": 262232,
+          "lfs": {
+            "sha256": "85e9596d9250a871deb159fb5db6979e910b4cf181d05c806733c49bc43d47c8",
+            "size": 262232,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "3_LayerNorm/config.json",
+          "blobId": "47b40e78f5173b13becd5199419b8e1b7108529d",
+          "size": 24
+        },
+        {
+          "rfilename": "3_LayerNorm/model.safetensors",
+          "blobId": "a134bf50c936ed682d3076802125ec83d8312e27",
+          "size": 2200,
+          "lfs": {
+            "sha256": "de99fa351fb4badb74b56e85fa70b5bbd3fcf4d0e74de79eb749dba1e9e28b4a",
+            "size": 2200,
+            "pointerSize": 129
+          }
+        },
+        {
+          "rfilename": "4_Dense/config.json",
+          "blobId": "1adac1663f2bcb8269ca70e0222e6a7290db2c6e",
+          "size": 213
+        },
+        {
+          "rfilename": "4_Dense/model.safetensors",
+          "blobId": "8e990896d8f49dcf358a014782da1ef97b6257e4",
+          "size": 1172,
+          "lfs": {
+            "sha256": "654827171b89c76d19d663162243f38d63d1ba812ac1ec9c1b36512f1a8e9ce8",
+            "size": 1172,
+            "pointerSize": 129
+          }
+        },
+        {
+          "rfilename": "README.md",
+          "blobId": "394fb09a0cb1ab5359e765b8d8b78cbf5a08f62e",
+          "size": 61550
+        },
+        {
+          "rfilename": "config.json",
+          "blobId": "000d36825fe8523522985b33d6f9938512352fd4",
+          "size": 1657
+        },
+        {
+          "rfilename": "config_sentence_transformers.json",
+          "blobId": "7a1acee00d6679a7f5f4a4fe6d52033fb0e61cc5",
+          "size": 257
+        },
+        {
+          "rfilename": "model.safetensors",
+          "blobId": "19aface57e2b2e6a9bc1fdea7e8348a6cdfe486b",
+          "size": 67193928,
+          "lfs": {
+            "sha256": "f970cbb7ae7f14082852ca6fb91a3171b346bdd9c78e871e1e8a0fdbde98ceb3",
+            "size": 67193928,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "modules.json",
+          "blobId": "47ea356ac3df2f27652b3d507298fe21f5c275c9",
+          "size": 678
+        },
+        {
+          "rfilename": "onnx/model.onnx",
+          "blobId": "458d3f261e8f702f8db58c0b7f40d89aed8765e9",
+          "size": 67329240,
+          "lfs": {
+            "sha256": "2a375ccea150a4df925a47884b510eeb4bd6227ca6fffdbbc62ca2284bfe6211",
+            "size": 67329240,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_O1.onnx",
+          "blobId": "fcb21d2d0425651baa3cff27cfd4ea809a95afe7",
+          "size": 67306970,
+          "lfs": {
+            "sha256": "649ee44f81d8135f3623190f46a68ad99831643b534d243e403998cd31ff1b1d",
+            "size": 67306970,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_O2.onnx",
+          "blobId": "486b4245b25c0b272657e956ee3c526e9f86cf5e",
+          "size": 67300850,
+          "lfs": {
+            "sha256": "f98dfc97321ea2a38e76b9f7df3feb34f0ec14484c21406f6ee43a4623e7a8a7",
+            "size": 67300850,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_O3.onnx",
+          "blobId": "0c9808c7a783024e45bebcbf18a3820d3f7a6564",
+          "size": 67300769,
+          "lfs": {
+            "sha256": "ae322c5ff81314947f06273b38632c9c150b14a045c311d5d1cf067f95f715f1",
+            "size": 67300769,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_O4.onnx",
+          "blobId": "12af56f38f42c3fe1c7dea9f5e59cf00cdc8d88c",
+          "size": 33721842,
+          "lfs": {
+            "sha256": "75e3c799c5161539ca6df0d03cb5c43c3c52048c3a0564596e7320d3e666c5cb",
+            "size": 33721842,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_qint8_arm64.onnx",
+          "blobId": "87bb56e3d0ac77ffbe68d44c42a970d83d3c08c2",
+          "size": 17127704,
+          "lfs": {
+            "sha256": "b485f6bf9da93544a6caee44c3170d12db4d5aa35350ea21d1dfd4a8281ed903",
+            "size": 17127704,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_qint8_avx512.onnx",
+          "blobId": "87bb56e3d0ac77ffbe68d44c42a970d83d3c08c2",
+          "size": 17127704,
+          "lfs": {
+            "sha256": "b485f6bf9da93544a6caee44c3170d12db4d5aa35350ea21d1dfd4a8281ed903",
+            "size": 17127704,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_qint8_avx512_vnni.onnx",
+          "blobId": "87bb56e3d0ac77ffbe68d44c42a970d83d3c08c2",
+          "size": 17127704,
+          "lfs": {
+            "sha256": "b485f6bf9da93544a6caee44c3170d12db4d5aa35350ea21d1dfd4a8281ed903",
+            "size": 17127704,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_quint8_avx2.onnx",
+          "blobId": "566a19c6282724fb34c6e8a72e1377026101b24c",
+          "size": 17127703,
+          "lfs": {
+            "sha256": "3f567dda364320baa51b274a41ec8cbbdf34f685c86d398f6b3b4df60fe0cc02",
+            "size": 17127703,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "openvino/openvino_model.bin",
+          "blobId": "e840a68c59e8a9965609416979f3e2b4a864d7b7",
+          "size": 67190116,
+          "lfs": {
+            "sha256": "c2dc144b0ab09bf31c9369aa6473f6d65ad8da9e4e7e1312774b500223fefaca",
+            "size": 67190116,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "openvino/openvino_model.xml",
+          "blobId": "92ad5094d03556a99f68138eb34eb7893873f687",
+          "size": 272931
+        },
+        {
+          "rfilename": "openvino/openvino_model_qint8_quantized.bin",
+          "blobId": "07f93d7febba63549b1963e08f9c15d63f38aa99",
+          "size": 17100728,
+          "lfs": {
+            "sha256": "4d98b33516dc945785f557580c622e8716968992cc89cb6868489afe4592f7e2",
+            "size": 17100728,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "openvino/openvino_model_qint8_quantized.xml",
+          "blobId": "0697a1ff88d6372eb37c3b5718112d3d7e8bb8ef",
+          "size": 426777
+        },
+        {
+          "rfilename": "sentence_bert_config.json",
+          "blobId": "d2cd15826913bba6e43310063d75883bb0b7b842",
+          "size": 241
+        },
+        {
+          "rfilename": "tokenizer.json",
+          "blobId": "632c265ee1546855a20a5cf80b0fe0f90ab3d032",
+          "size": 3583327
+        },
+        {
+          "rfilename": "tokenizer_config.json",
+          "blobId": "0abfc51c1faf6445651565714b64a833f2f4d252",
+          "size": 488
+        }
+      ],
+      "license": "apache-2.0"
+    },
+    "ettin-32m": {
+      "repo_id": "cross-encoder/ettin-reranker-32m-v1",
+      "revision": "b33e5ceb5110773ea9cf5e00c9bedc83a8c2afdd",
+      "siblings": [
+        {
+          "rfilename": ".gitattributes",
+          "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "size": 1519
+        },
+        {
+          "rfilename": "1_Pooling/config.json",
+          "blobId": "8fbbfb9dadd08750480796013543e482792c0c96",
+          "size": 89
+        },
+        {
+          "rfilename": "2_Dense/config.json",
+          "blobId": "7bda8aec49c2fbdd18976d5b2fa888327f0eab9c",
+          "size": 228
+        },
+        {
+          "rfilename": "2_Dense/model.safetensors",
+          "blobId": "76fe14364eadf4a77eca9e1bd4fabd3962ed2e45",
+          "size": 589912,
+          "lfs": {
+            "sha256": "ae4d8431b8ed8afeda16dd51608c4cb7e0f810724a91423dbbb867c047285000",
+            "size": 589912,
+            "pointerSize": 131
+          }
+        },
+        {
+          "rfilename": "3_LayerNorm/config.json",
+          "blobId": "53de443f256f982490715781406242fc7691a87c",
+          "size": 24
+        },
+        {
+          "rfilename": "3_LayerNorm/model.safetensors",
+          "blobId": "298f100d9585343463bf8271548761e5b5403cc6",
+          "size": 3224,
+          "lfs": {
+            "sha256": "3e8b5ae0d2716b538d0cdd8664bef438f20a09a1b79654fc09f19560197d3274",
+            "size": 3224,
+            "pointerSize": 129
+          }
+        },
+        {
+          "rfilename": "4_Dense/config.json",
+          "blobId": "f884c205cf1a9335054d21e888836c902ebb4249",
+          "size": 213
+        },
+        {
+          "rfilename": "4_Dense/model.safetensors",
+          "blobId": "4f1366026156eed59a2163eb01465934e448c8bc",
+          "size": 1684,
+          "lfs": {
+            "sha256": "03aa39279659756a52fb02cd569b97f2d1fb0d8036ab74d45c4736f358389e01",
+            "size": 1684,
+            "pointerSize": 129
+          }
+        },
+        {
+          "rfilename": "README.md",
+          "blobId": "cb500843c4278b2f1811dc6550b7274b2184e568",
+          "size": 61552
+        },
+        {
+          "rfilename": "config.json",
+          "blobId": "9d106bde2a6d7bfe8692d6c989b460909baaf62e",
+          "size": 1730
+        },
+        {
+          "rfilename": "config_sentence_transformers.json",
+          "blobId": "7a1acee00d6679a7f5f4a4fe6d52033fb0e61cc5",
+          "size": 257
+        },
+        {
+          "rfilename": "model.safetensors",
+          "blobId": "3298702d5bef940458e93dcc17fd04178b769ccc",
+          "size": 127538496,
+          "lfs": {
+            "sha256": "1fb540f3ad6cd4d4e4c5cfe3be48586f1fd50ae80578f2d430d1b74f5d52d95e",
+            "size": 127538496,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "modules.json",
+          "blobId": "47ea356ac3df2f27652b3d507298fe21f5c275c9",
+          "size": 678
+        },
+        {
+          "rfilename": "onnx/model.onnx",
+          "blobId": "12d37728f96a1f1423f9bff23dcaba1a41e30ce5",
+          "size": 127737036,
+          "lfs": {
+            "sha256": "31061d9f54e8303f5d95cf3433dcf99f50d5f6de283c3b8357452be8c824142f",
+            "size": 127737036,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_O1.onnx",
+          "blobId": "32b7f2c6d2e153f7b224af67e0575971c50d8e27",
+          "size": 127706649,
+          "lfs": {
+            "sha256": "67c288a689f1a7d889eec1ebfccb5b47c10db27dd2a754a5b8d6031b943e81d6",
+            "size": 127706649,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_O2.onnx",
+          "blobId": "1b1e8c0c6bda024a25bd048a7eddd3a712570a1f",
+          "size": 127698090,
+          "lfs": {
+            "sha256": "284eb61308eae07b52f613da717921718d8d7b4ecfb942362c7afc4428ebe583",
+            "size": 127698090,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_O3.onnx",
+          "blobId": "21afa10ffc0ef7a0840317ee553cb5bb0c5ed33a",
+          "size": 127697970,
+          "lfs": {
+            "sha256": "96b484e359bc632ecf24adeeb53c8da1f0fd244c898ef170fe0157efe0331005",
+            "size": 127697970,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_O4.onnx",
+          "blobId": "84e11a88ef18976ee6d7d2c725953d5f9e33f40a",
+          "size": 63948569,
+          "lfs": {
+            "sha256": "48ea98a717724db58b87fec4d9fb61007f273b89919f86893f3bd8d61a8b5e53",
+            "size": 63948569,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_qint8_arm64.onnx",
+          "blobId": "d6c00cafbbd1437f92c2e7809523265cc0faf45c",
+          "size": 32416083,
+          "lfs": {
+            "sha256": "92cdd69ba25685f50b13663f83724d6e8cc77344bb7c0441a26a428564b1c2f6",
+            "size": 32416083,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_qint8_avx512.onnx",
+          "blobId": "d6c00cafbbd1437f92c2e7809523265cc0faf45c",
+          "size": 32416083,
+          "lfs": {
+            "sha256": "92cdd69ba25685f50b13663f83724d6e8cc77344bb7c0441a26a428564b1c2f6",
+            "size": 32416083,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_qint8_avx512_vnni.onnx",
+          "blobId": "d6c00cafbbd1437f92c2e7809523265cc0faf45c",
+          "size": 32416083,
+          "lfs": {
+            "sha256": "92cdd69ba25685f50b13663f83724d6e8cc77344bb7c0441a26a428564b1c2f6",
+            "size": 32416083,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_quint8_avx2.onnx",
+          "blobId": "b00bec40900919732fff791bed133171b35ffeca",
+          "size": 32416083,
+          "lfs": {
+            "sha256": "7ca231b98dc591122774127865a293aae90b9a2ccb148afe8c2587d03703f8d0",
+            "size": 32416083,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "openvino/openvino_model.bin",
+          "blobId": "fbad7f2a3104cbccd577fe0343d549a6b3920398",
+          "size": 127532900,
+          "lfs": {
+            "sha256": "142377308b20f88f9cb91fa7065be2ea2ce01c588238433898f336f9f93ce215",
+            "size": 127532900,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "openvino/openvino_model.xml",
+          "blobId": "6fd03a0c1728544414ea382814a7c98db15fbe36",
+          "size": 375001
+        },
+        {
+          "rfilename": "openvino/openvino_model_qint8_quantized.bin",
+          "blobId": "5959043a1955d7fc52432c9884fa4f4135d22f74",
+          "size": 32301640,
+          "lfs": {
+            "sha256": "078e854b35b20b9f43a5476463beb99bb95c56278bc909b1da6c5bbb5d3ac3f3",
+            "size": 32301640,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "openvino/openvino_model_qint8_quantized.xml",
+          "blobId": "10d9129337ef1b00aa7bb39700cb70f9024764e1",
+          "size": 594083
+        },
+        {
+          "rfilename": "sentence_bert_config.json",
+          "blobId": "d2cd15826913bba6e43310063d75883bb0b7b842",
+          "size": 241
+        },
+        {
+          "rfilename": "tokenizer.json",
+          "blobId": "632c265ee1546855a20a5cf80b0fe0f90ab3d032",
+          "size": 3583327
+        },
+        {
+          "rfilename": "tokenizer_config.json",
+          "blobId": "0abfc51c1faf6445651565714b64a833f2f4d252",
+          "size": 488
+        }
+      ],
+      "license": "apache-2.0"
+    },
+    "ettin-68m": {
+      "repo_id": "cross-encoder/ettin-reranker-68m-v1",
+      "revision": "d166fa88ddde3c42bc3ee92f7df476d941c8204a",
+      "siblings": [
+        {
+          "rfilename": ".gitattributes",
+          "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "size": 1519
+        },
+        {
+          "rfilename": "1_Pooling/config.json",
+          "blobId": "028f2de6c7f01d011eb67ddb86f69b2d86d2c219",
+          "size": 89
+        },
+        {
+          "rfilename": "2_Dense/config.json",
+          "blobId": "d942a3a6b93ad9db64a4589838c31ebb30698c1c",
+          "size": 228
+        },
+        {
+          "rfilename": "2_Dense/model.safetensors",
+          "blobId": "f065322a0f28b5d14761e8b6b7505e53688b1460",
+          "size": 1048664,
+          "lfs": {
+            "sha256": "ee9b8a9186fffb05cea0cd73e2ccfc8a4bf641c075d8f304e5c4e4f5fe0716d0",
+            "size": 1048664,
+            "pointerSize": 132
+          }
+        },
+        {
+          "rfilename": "3_LayerNorm/config.json",
+          "blobId": "5ccc82d7938a0811d79b6d52e229f68d35b11a4c",
+          "size": 24
+        },
+        {
+          "rfilename": "3_LayerNorm/model.safetensors",
+          "blobId": "816f7e883b28d89ff3b7d613b235b0ff75ffad76",
+          "size": 4248,
+          "lfs": {
+            "sha256": "3906f4be69408f4f370c7bfdc2de6ef825d4d1f4da4f01221d831336c0e3a91a",
+            "size": 4248,
+            "pointerSize": 129
+          }
+        },
+        {
+          "rfilename": "4_Dense/config.json",
+          "blobId": "99a2e101ad084c9ca8e1e90685194abb4031ae5e",
+          "size": 213
+        },
+        {
+          "rfilename": "4_Dense/model.safetensors",
+          "blobId": "57a5fe839b7f24035c25957db1b8119907cb6b47",
+          "size": 2196,
+          "lfs": {
+            "sha256": "1a391820f020c8fc3efb1da894e1719cfdfb8a6c73d214f34f5b1802bac8b9dd",
+            "size": 2196,
+            "pointerSize": 129
+          }
+        },
+        {
+          "rfilename": "README.md",
+          "blobId": "1b998df6a671e7f701ecf7f4499d09d4397873ce",
+          "size": 66854
+        },
+        {
+          "rfilename": "config.json",
+          "blobId": "4c1b271a60c4c35396fc5e31e32e03136d40f504",
+          "size": 1946
+        },
+        {
+          "rfilename": "config_sentence_transformers.json",
+          "blobId": "7a1acee00d6679a7f5f4a4fe6d52033fb0e61cc5",
+          "size": 257
+        },
+        {
+          "rfilename": "model.safetensors",
+          "blobId": "f692007f0112c1df7cf969ef29abf43d580dce67",
+          "size": 272589832,
+          "lfs": {
+            "sha256": "d6aa3080446f53cbc7fc2af35621fcd149eeb8f93def521cadd5b57654f2c422",
+            "size": 272589832,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "modules.json",
+          "blobId": "47ea356ac3df2f27652b3d507298fe21f5c275c9",
+          "size": 678
+        },
+        {
+          "rfilename": "onnx/model.onnx",
+          "blobId": "eea64aa9dd13d84a72dae9e95c5ad83d3a012c58",
+          "size": 272978775,
+          "lfs": {
+            "sha256": "95505bbc6a95f9bdfad71e55998fec30c5cc0be490e921cbd796d2dbf0243f2f",
+            "size": 272978775,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_O1.onnx",
+          "blobId": "8cc005e6cecc9121fd1979aa354e83a290179322",
+          "size": 272923360,
+          "lfs": {
+            "sha256": "ffb3859397114add4694c527cf5d6d8bfbb8fe1891e6052e1e8ce51d4091fef3",
+            "size": 272923360,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_O2.onnx",
+          "blobId": "740a6018e3d8982a56005ac0603e8e709edfc105",
+          "size": 272907240,
+          "lfs": {
+            "sha256": "4cb21994b2731cdc6c1f34cf5056579c6ad5e1abd0c05a85e711e875bb1b99db",
+            "size": 272907240,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_O3.onnx",
+          "blobId": "77ad4c636afd4a0b32b821695d326809d52b881b",
+          "size": 272907012,
+          "lfs": {
+            "sha256": "5d1ac64bfd5cb689c19239b6fc69d9df352289aa7e6005790d077b9e868ac7dd",
+            "size": 272907012,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_O4.onnx",
+          "blobId": "902b32ff34c2d333a27be567823215023b453429",
+          "size": 136639490,
+          "lfs": {
+            "sha256": "cf9ae639cae1cf111ea60e1d35b9932bff24b484856a55da5af5dd1ad2e86ae7",
+            "size": 136639490,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_qint8_arm64.onnx",
+          "blobId": "10705236a929f58dfff2c756582312eac2d2ec0a",
+          "size": 69276379,
+          "lfs": {
+            "sha256": "9bb96642058588a4bd85204ff0eadc9b673e2a0efa77ac503838ac97e76f7c8d",
+            "size": 69276379,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_qint8_avx512.onnx",
+          "blobId": "10705236a929f58dfff2c756582312eac2d2ec0a",
+          "size": 69276379,
+          "lfs": {
+            "sha256": "9bb96642058588a4bd85204ff0eadc9b673e2a0efa77ac503838ac97e76f7c8d",
+            "size": 69276379,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_qint8_avx512_vnni.onnx",
+          "blobId": "10705236a929f58dfff2c756582312eac2d2ec0a",
+          "size": 69276379,
+          "lfs": {
+            "sha256": "9bb96642058588a4bd85204ff0eadc9b673e2a0efa77ac503838ac97e76f7c8d",
+            "size": 69276379,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_quint8_avx2.onnx",
+          "blobId": "8c4a38fd578cd757564ae4cb51bce77ede516db1",
+          "size": 69276379,
+          "lfs": {
+            "sha256": "32972293b8c229a906129aee4feb08fee3df993f9e5ed247179c94bcbbaae06a",
+            "size": 69276379,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "openvino/openvino_model.bin",
+          "blobId": "4b91e19a8689e05a4061600eb4bae20aa45d5bb1",
+          "size": 272578916,
+          "lfs": {
+            "sha256": "2d6ad814e28a30dc565f8bf75d6ffed1dee741b5e46f32fc9fd8d91ef3715213",
+            "size": 272578916,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "openvino/openvino_model.xml",
+          "blobId": "c47e137ae4a0f722f3b18cb85fcff83397496f68",
+          "size": 683029
+        },
+        {
+          "rfilename": "openvino/openvino_model_qint8_quantized.bin",
+          "blobId": "7d1333b706c5a83d9d14bbf27858b53790121133",
+          "size": 68893688,
+          "lfs": {
+            "sha256": "618bbe2f9101eafe799e94757137899dc167acfc449efde441d62071c9e57cbb",
+            "size": 68893688,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "openvino/openvino_model_qint8_quantized.xml",
+          "blobId": "63c4e77749e08c0d62c24f6c81c2fdc7fb183b21",
+          "size": 1097627
+        },
+        {
+          "rfilename": "sentence_bert_config.json",
+          "blobId": "d2cd15826913bba6e43310063d75883bb0b7b842",
+          "size": 241
+        },
+        {
+          "rfilename": "tokenizer.json",
+          "blobId": "632c265ee1546855a20a5cf80b0fe0f90ab3d032",
+          "size": 3583327
+        },
+        {
+          "rfilename": "tokenizer_config.json",
+          "blobId": "0abfc51c1faf6445651565714b64a833f2f4d252",
+          "size": 488
+        }
+      ],
+      "license": "apache-2.0"
+    },
+    "ettin-150m": {
+      "repo_id": "cross-encoder/ettin-reranker-150m-v1",
+      "revision": "025501c4e0f9bbeb4c5b198318e0089ff061cc14",
+      "siblings": [
+        {
+          "rfilename": ".gitattributes",
+          "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "size": 1519
+        },
+        {
+          "rfilename": "1_Pooling/config.json",
+          "blobId": "2236c262f1f83c50f7c304e98a8d1413980280df",
+          "size": 89
+        },
+        {
+          "rfilename": "2_Dense/config.json",
+          "blobId": "965cde072a7ec5516896a65b9404620479d36d6a",
+          "size": 228
+        },
+        {
+          "rfilename": "2_Dense/model.safetensors",
+          "blobId": "98b52fe8993708336e3b7bdaf1fd4647352ed974",
+          "size": 2359384,
+          "lfs": {
+            "sha256": "bc39a6bdfd371a47a08fbf84781bc7224b846ec0e15213b560d2abbbfb323b75",
+            "size": 2359384,
+            "pointerSize": 132
+          }
+        },
+        {
+          "rfilename": "3_LayerNorm/config.json",
+          "blobId": "604227ac1046f14fa7f40627a43f83c0f5929cd0",
+          "size": 24
+        },
+        {
+          "rfilename": "3_LayerNorm/model.safetensors",
+          "blobId": "a84ff3d3d18a314071441f351ac1139e308b39bd",
+          "size": 6296,
+          "lfs": {
+            "sha256": "a119c63bd3b89934c89f2394e2278014e663e01625dc322c603ddbf24b10325c",
+            "size": 6296,
+            "pointerSize": 129
+          }
+        },
+        {
+          "rfilename": "4_Dense/config.json",
+          "blobId": "51055ffef4c5eda72816d719fa567c1b203e0e59",
+          "size": 213
+        },
+        {
+          "rfilename": "4_Dense/model.safetensors",
+          "blobId": "a298ef8caa3cd808409c6572065ab957bc96877c",
+          "size": 3220,
+          "lfs": {
+            "sha256": "cececab2925f12c9c7541d5d438202a6eec4b503658e0e64790f2d0414ede6a8",
+            "size": 3220,
+            "pointerSize": 129
+          }
+        },
+        {
+          "rfilename": "README.md",
+          "blobId": "747fdf1170e5a601c49a2d81dba318c68e1e519a",
+          "size": 69952
+        },
+        {
+          "rfilename": "config.json",
+          "blobId": "7d07fa9d897bd62fe1faaed7a6f162dc7ac24c61",
+          "size": 2020
+        },
+        {
+          "rfilename": "config_sentence_transformers.json",
+          "blobId": "7a1acee00d6679a7f5f4a4fe6d52033fb0e61cc5",
+          "size": 257
+        },
+        {
+          "rfilename": "model.safetensors",
+          "blobId": "f9a2e46abdcc6562d9e2cd2a17a0d3bac6b443ba",
+          "size": 596070136,
+          "lfs": {
+            "sha256": "0dd04496917f100307bc37e0fc7acb8750bb8781badfdb21a368b0e965a0d981",
+            "size": 596070136,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "modules.json",
+          "blobId": "47ea356ac3df2f27652b3d507298fe21f5c275c9",
+          "size": 678
+        },
+        {
+          "rfilename": "onnx/model.onnx",
+          "blobId": "9d756de75d840e225c3750bef7286c8f21953fc8",
+          "size": 596565114,
+          "lfs": {
+            "sha256": "2c6968436957b7f295e1c60415fc955ba63cd142ba1b332c6cceb925fcb4cd4f",
+            "size": 596565114,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_O1.onnx",
+          "blobId": "7727464a6e7ef664b237e8f21586de62c2630274",
+          "size": 596501359,
+          "lfs": {
+            "sha256": "0cdb43481bb0027cdb75c1833ec4e64ca570410874c7f3281ab35b893766845c",
+            "size": 596501359,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_O2.onnx",
+          "blobId": "2c57f8103063a20d097d37ce928ba775e7364016",
+          "size": 596482719,
+          "lfs": {
+            "sha256": "3e2cc751e4cf0bad5bcd2d5fb2a17a6447f46af410dac18080691af5b4c990df",
+            "size": 596482719,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_O3.onnx",
+          "blobId": "cc3fd440da5f4c771a9430c52ede2086edc2b7d6",
+          "size": 596482455,
+          "lfs": {
+            "sha256": "1b7dfdbaed7e4f526f55619ad65751464b20cede30c4cd1cb339faf289fe8e9d",
+            "size": 596482455,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_O4.onnx",
+          "blobId": "ddc3834019379db8bd5fd841398001818d166e2e",
+          "size": 298456065,
+          "lfs": {
+            "sha256": "d15f35396b9e33bdd560f71e7bf784fc79e7d1cc12f9f397d52e72c135272572",
+            "size": 298456065,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_qint8_arm64.onnx",
+          "blobId": "276cc477e19d431090116230b91d2e35b6d69dda",
+          "size": 150628482,
+          "lfs": {
+            "sha256": "27ac73363fd16d308fd7f91044df323f53af390ef775ac51e56e551c1adcee7d",
+            "size": 150628482,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_qint8_avx512.onnx",
+          "blobId": "276cc477e19d431090116230b91d2e35b6d69dda",
+          "size": 150628482,
+          "lfs": {
+            "sha256": "27ac73363fd16d308fd7f91044df323f53af390ef775ac51e56e551c1adcee7d",
+            "size": 150628482,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_qint8_avx512_vnni.onnx",
+          "blobId": "276cc477e19d431090116230b91d2e35b6d69dda",
+          "size": 150628482,
+          "lfs": {
+            "sha256": "27ac73363fd16d308fd7f91044df323f53af390ef775ac51e56e551c1adcee7d",
+            "size": 150628482,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_quint8_avx2.onnx",
+          "blobId": "fbbb22c5d4798fcb91cbc514c0b70cb5a54d5016",
+          "size": 150628481,
+          "lfs": {
+            "sha256": "7ae500b430815623ae87f4c05ffe6fccaab88752963c6a1140cb4ef86f60da70",
+            "size": 150628481,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "openvino/openvino_model.bin",
+          "blobId": "37925858639b4db5bb4605491ed32d6defd8d910",
+          "size": 596057444,
+          "lfs": {
+            "sha256": "a55a30a8ed8d4db3c841e9f2da29d7d7d67088fc45ce15fbf9a6347c5a3af7cb",
+            "size": 596057444,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "openvino/openvino_model.xml",
+          "blobId": "52ec0d538f51d90106ac9140c12429e7e86dd5e7",
+          "size": 787335
+        },
+        {
+          "rfilename": "openvino/openvino_model_qint8_quantized.bin",
+          "blobId": "b35b235523e90a30c7d0e733cad5a2d2532eae97",
+          "size": 150165640,
+          "lfs": {
+            "sha256": "71b6b9d3b3f03b881f2afe9a95344c615a39f2c6c6f95a2062af6538cfaee753",
+            "size": 150165640,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "openvino/openvino_model_qint8_quantized.xml",
+          "blobId": "8e50b8f5a6fadaa654d1dfe3bbc9155d746f7766",
+          "size": 1267590
+        },
+        {
+          "rfilename": "sentence_bert_config.json",
+          "blobId": "d2cd15826913bba6e43310063d75883bb0b7b842",
+          "size": 241
+        },
+        {
+          "rfilename": "tokenizer.json",
+          "blobId": "632c265ee1546855a20a5cf80b0fe0f90ab3d032",
+          "size": 3583327
+        },
+        {
+          "rfilename": "tokenizer_config.json",
+          "blobId": "0abfc51c1faf6445651565714b64a833f2f4d252",
+          "size": 488
+        }
+      ],
+      "license": "apache-2.0"
+    },
+    "jina-turbo-en": {
+      "repo_id": "jinaai/jina-reranker-v1-turbo-en",
+      "revision": "b8c14f4e723d9e0aab4732a7b7b93741eeeb77c2",
+      "siblings": [
+        {
+          "rfilename": ".gitattributes",
+          "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "size": 1519
+        },
+        {
+          "rfilename": "README.md",
+          "blobId": "2a7096deeedc411cbc22b138bcf9c44eabd39f6e",
+          "size": 10744
+        },
+        {
+          "rfilename": "config.json",
+          "blobId": "1febe623f0d5566bf1dd91fb0641a29e122ee6e3",
+          "size": 1206
+        },
+        {
+          "rfilename": "configuration_bert.py",
+          "blobId": "c2c134a01dfc327a2397a29275dfc5aaecd56bd6",
+          "size": 8240
+        },
+        {
+          "rfilename": "merges.txt",
+          "blobId": "4aac66bad64c2ddbb7294b525f05ebfc78585267",
+          "size": 336141
+        },
+        {
+          "rfilename": "model.safetensors",
+          "blobId": "5992240b3b701f634250df7fa909be4d90ee7e9c",
+          "size": 75554746,
+          "lfs": {
+            "sha256": "6faa4c9876a52aed86716a7c99385da1af985d9eaf9ffec3d52b30a3d2600ee9",
+            "size": 75554746,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "modeling_bert.py",
+          "blobId": "ed88795c14689011550fe6638b2af4b4c07b0042",
+          "size": 99262
+        },
+        {
+          "rfilename": "onnx/model.onnx",
+          "blobId": "27b9e805306c7c5201f9d7590e74ffea6e8a5a90",
+          "size": 151296975,
+          "lfs": {
+            "sha256": "c1296c66c119de645fa9cdee536d8637740efe85224cfa270281e50f213aa565",
+            "size": 151296975,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_bnb4.onnx",
+          "blobId": "272859779b051a7e1b65c6cfac0d78589b5b340a",
+          "size": 102642048,
+          "lfs": {
+            "sha256": "9db01a2886b23abc56af98a9c900b40764d2065b80e849eae6f7341294602c41",
+            "size": 102642048,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_fp16.onnx",
+          "blobId": "6eef21b75fd4e3c3721c5cd5adf6f6059102bdd5",
+          "size": 75802349,
+          "lfs": {
+            "sha256": "401819c91426abef90619efcd438fa5a73fc4fe64de1c6a69e7d51e2ae6268e2",
+            "size": 75802349,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_int8.onnx",
+          "blobId": "aa0fb38dd6ceac3c40deff8c44defebd7695dd2d",
+          "size": 38295104,
+          "lfs": {
+            "sha256": "3defdef1ae34e119bd704216087743e79665934c96aebabcb6077c239dc3ae66",
+            "size": 38295104,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_q4.onnx",
+          "blobId": "7d1ca0a27cb871b43c04f0183507be2af11c2c14",
+          "size": 103526550,
+          "lfs": {
+            "sha256": "9e85e3c0797005d96d56e978c659a151afa8e0fb49114adb95e74b555d37e8df",
+            "size": 103526550,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_quantized.onnx",
+          "blobId": "aa0fb38dd6ceac3c40deff8c44defebd7695dd2d",
+          "size": 38295104,
+          "lfs": {
+            "sha256": "3defdef1ae34e119bd704216087743e79665934c96aebabcb6077c239dc3ae66",
+            "size": 38295104,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "onnx/model_uint8.onnx",
+          "blobId": "73f83bcb16b5233ff79d562fd4f649a975c13f43",
+          "size": 38295103,
+          "lfs": {
+            "sha256": "4f6edff0634c97c4ede6724da19d1c536e95fc5844a8b4597e027c3531cdbf71",
+            "size": 38295103,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "pytorch_model.bin",
+          "blobId": "54f80fa70908e0978bbadd2f235e086b4ddc9bb6",
+          "size": 76153978,
+          "lfs": {
+            "sha256": "865db4f93a28237be5d32299e35e6c442ea3435a3c845866c6b43ffb3b7ed35e",
+            "size": 76153978,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "special_tokens_map.json",
+          "blobId": "d5698132694f4f1bcff08fa7d937b1701812598e",
+          "size": 280
+        },
+        {
+          "rfilename": "tokenizer.json",
+          "blobId": "61287c716716abd7a3096ff2f74a1de6e20d589b",
+          "size": 2030772
+        },
+        {
+          "rfilename": "tokenizer_config.json",
+          "blobId": "742b5d2b49f1a9222693ca4295f3226716f2f2bc",
+          "size": 1215
+        },
+        {
+          "rfilename": "vocab.json",
+          "blobId": "bde5bd0511c315d2cba04c2aa23646765be10abb",
+          "size": 854399
+        }
+      ],
+      "license": "apache-2.0"
+    },
+    "gte-modernbert-base": {
+      "repo_id": "Alibaba-NLP/gte-reranker-modernbert-base",
+      "revision": "f7481e6055501a30fb19d090657df9ec1f79ab2c",
+      "siblings": [
+        {
+          "rfilename": ".gitattributes",
+          "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "size": 1519
+        },
+        {
+          "rfilename": "README.md",
+          "blobId": "dfcd887e688b8f19f3a33583ece6b0c3c8a2062b",
+          "size": 14180
+        },
+        {
+          "rfilename": "config.json",
+          "blobId": "cde62268ea0c57b0ad2fe75c2ca4cad55ed6d0f5",
+          "size": 1333
+        },
+        {
+          "rfilename": "model.safetensors",
+          "blobId": "bd5152900336cb48cc31cf488b40543f2cc1e758",
+          "size": 598436708,
+          "lfs": {
+            "sha256": "13c533d902d6a48fa97375c6856c3e60854f9228ea760e3fc18ebde057e0cf31",
+            "size": 598436708,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model.onnx",
+          "blobId": "05486f0967ec4d12e97e85cba8fdc7cef60eacbb",
+          "size": 598803940,
+          "lfs": {
+            "sha256": "c6d3226502addbcd4d2cf273802957ebf8a2a6bf94037dcb9b1d95bfc01e5d93",
+            "size": 598803940,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_bnb4.onnx",
+          "blobId": "380a2c69337a35f12ab7752c3bb0fca935ccaa97",
+          "size": 217644038,
+          "lfs": {
+            "sha256": "05b830bff59db603aa9a4573ca2478b4c46f47e9bd08d2a9622b3780add9c4ce",
+            "size": 217644038,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_fp16.onnx",
+          "blobId": "d40049025c85b97333f6c56c8bae86eb61186c20",
+          "size": 299592530,
+          "lfs": {
+            "sha256": "18acede2913b05211687cfd627d8b3d85bbb91ad36b44252263322760eb68d7b",
+            "size": 299592530,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_int8.onnx",
+          "blobId": "bd8796e9919c0e0dedf4bf8fd94d2d74a93725d0",
+          "size": 150871837,
+          "lfs": {
+            "sha256": "ecc6a0ae67cee3d898167802383112d9185ca9250e07bd5d1fa65019b050179d",
+            "size": 150871837,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_q4.onnx",
+          "blobId": "ba849b0ba14677ee3ea2dabe7152cdcdb8c3e477",
+          "size": 224573803,
+          "lfs": {
+            "sha256": "abb61e2882c863326c469252f496cadb5b4f19ee0a150bbaa43fbfc831aae49b",
+            "size": 224573803,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_q4f16.onnx",
+          "blobId": "5627012c516c21e390a15080e41dc78cb2bab3fe",
+          "size": 140205875,
+          "lfs": {
+            "sha256": "72cdd83516ab8f8e5b365e73283ab70e5bc7e43465d76b26c468ea00f19199e9",
+            "size": 140205875,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_quantized.onnx",
+          "blobId": "bd8796e9919c0e0dedf4bf8fd94d2d74a93725d0",
+          "size": 150871837,
+          "lfs": {
+            "sha256": "ecc6a0ae67cee3d898167802383112d9185ca9250e07bd5d1fa65019b050179d",
+            "size": 150871837,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "onnx/model_uint8.onnx",
+          "blobId": "ed761b4c5016fd8078afbf6d69b60115ec826b39",
+          "size": 150871837,
+          "lfs": {
+            "sha256": "7257b9d102dca4b2d28935063ae015246e0de789e3d29f318b1d3b566830ff55",
+            "size": 150871837,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "special_tokens_map.json",
+          "blobId": "6bf65ea14185a88eef7e24b41c86a953a58dcbad",
+          "size": 694
+        },
+        {
+          "rfilename": "tokenizer.json",
+          "blobId": "f418c5fa0465aa7f506bf17c4533239f162ab8e9",
+          "size": 3583499
+        },
+        {
+          "rfilename": "tokenizer_config.json",
+          "blobId": "0f0ffebe3e5174288503af5e2dc799d66d5781ae",
+          "size": 21031
+        }
+      ],
+      "license": "apache-2.0"
+    }
+  }
+}

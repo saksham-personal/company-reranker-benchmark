@@ -1,0 +1,7 @@
+# Third-party notices
+
+The six pinned model repositories are [Ettin 17M](https://huggingface.co/cross-encoder/ettin-reranker-17m-v1), [32M](https://huggingface.co/cross-encoder/ettin-reranker-32m-v1), [68M](https://huggingface.co/cross-encoder/ettin-reranker-68m-v1), [150M](https://huggingface.co/cross-encoder/ettin-reranker-150m-v1), [Jina v1 Turbo EN](https://huggingface.co/jinaai/jina-reranker-v1-turbo-en) and [GTE ModernBERT base](https://huggingface.co/Alibaba-NLP/gte-reranker-modernbert-base). Their exact upstream commits, files, hashes and licenses are recorded in `configs/upstream_lock.json` and Release file manifests. All six report Apache-2.0. Each model ZIP contains the license. Jina's pinned custom code is bundled locally; original upstream Python files remain alongside narrowly patched runtime copies for compatibility with the locked Transformers version. See `PROVENANCE.json` in its model archive.
+
+The public company summaries are CC BY 4.0 with attribution in `data/public-source-original/README.md`. The controlled and long-context synthetic sets are CC0. BEIR SciFact source and licenses are attributed inside its Release ZIP; see `docs/DATASETS.md`. Company trademarks and source websites remain with their owners.
+
+The offline Python and wheel bundle contains third-party software under its own license files and metadata. Runtime package versions are locked in `requirements.lock` and `uv.lock`. This repository's original benchmark code is licensed under MIT; third-party assets retain their own terms.

@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.zip binary
+*.safetensors binary
+*.whl binary
+data/public-source-original/** -text
+data/controlled-source-original/** -text

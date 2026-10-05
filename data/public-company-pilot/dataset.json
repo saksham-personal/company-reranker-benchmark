@@ -1,0 +1,13 @@
+{
+  "dataset_id": "public-company-screening-v1",
+  "diagnostics": false,
+  "files": {
+    "corpus.jsonl": "17f46c9116984cccdbb0078de2908d976d71e789b3a9519c3a663547910c4d8f",
+    "qrels.tsv": "8fae7684559b1754a6e64d45a82742b61d4b25b9b5930ff236ff9c28a1c69f65",
+    "queries.jsonl": "38b17f95c24c6c25f16d8def83c0ff91aed51521a66881cc0999ba04b7a65555"
+  },
+  "license": "CC-BY-4.0",
+  "qrels_complete": false,
+  "schema_version": 1,
+  "source": "Independent fact summaries and annotations adapted from the Company Embedding Benchmark public-source curation (2026-10-02); see ../public-source-original/README.md, dataset.json, sources.jsonl, rationales.jsonl, bibliography.json."
+}
