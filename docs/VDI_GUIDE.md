@@ -7,6 +7,8 @@
 5. Run `D:\RerankerBench\.venv\Scripts\python.exe scripts/run_suite.py --work-dir D:\RerankerBench --dry-run` to see the planned jobs. Remove `--dry-run` for the measured run. It executes serially and can take hours for the larger models and 4,096-token diagnostics.
 6. Read `reports/REPORT.md` and raw JSON. A failed model has a `.log` and failure JSON; fix the cause and use `--force` to rerun. Files are never silently counted as success.
 
+For a controlled-rich thread sweep after the main run, use `D:\RerankerBench\.venv\Scripts\python.exe scripts/run_suite.py --plan configs\suite-thread-scaling.json --work-dir D:\RerankerBench --results D:\RerankerBench\thread-results`. The 24 serial speed jobs compare 1, 2, 4 and 8 threads on the same 20 queries and original 500-candidate prefix. They may take several hours on CPU.
+
 The default suite uses 512-token FP32 pairs and a 4,096-token diagnostic. If memory is tight, run one job at a time with the CLI and batch size 1 or 2. Keep thread, batch and token settings matched across models for a comparison. Record your VDI CPU quota and avoid overlapping runs.
 
 To substitute production stage-one candidates, export one JSONL object per query with ordered `doc_ids`, then run:

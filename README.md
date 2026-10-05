@@ -32,6 +32,8 @@ The suite runs jobs serially in fresh CPU processes. It stores raw JSON and logs
 
 For a quick installation check before the full suite, run `D:\RerankerBench\.venv\Scripts\python.exe scripts/run_suite.py --plan configs\suite-smoke.json --work-dir D:\RerankerBench --results D:\RerankerBench\smoke-results`. This short synthetic result is exploratory.
 
+After the main run, `configs/suite-thread-scaling.json` provides a separate matched CPU sweep for all six models at 1, 2, 4 and 8 threads. Run it with `--plan configs\suite-thread-scaling.json --results D:\RerankerBench\thread-results`; it writes 24 speed rows for the same controlled-rich workload.
+
 ## Evaluation design
 
 For each query, stage one retrieves up to 1,000 companies. Each model scores `(screening criteria, one company record)` pairs for the **original top 500**, sorts that prefix, and leaves ranks 501 onward untouched. The reranker cannot recover a relevant company missing from stage one's top 500. All models receive the same frozen candidate IDs and chosen text representation. These BM25 pools are a reproducible fallback, not a claim that BM25 matches your current embedding stage. Replace them with exported ordered runs from the actual embedding system for production transfer.

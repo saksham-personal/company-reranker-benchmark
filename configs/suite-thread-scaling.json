@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "machine_role": "vdi",
+  "description": "Optional matched CPU thread sweep on 20 controlled-rich queries, 500 reranked candidates, 512-token pairs and batch 8. Each row runs in a fresh process; compare within this plan only.",
+  "jobs": [
+    {
+      "name": "controlled-rich-threads-1",
+      "dataset": "data/controlled-company-screening",
+      "candidates": "configs/candidates/controlled-company-bm25.json",
+      "representation": "rich",
+      "models": ["ettin-17m", "ettin-32m", "jina-turbo-en", "ettin-68m", "gte-modernbert-base", "ettin-150m"],
+      "speed": {"rerank_depth": 500, "max_length": 512, "threads": 1, "batch_size": 8, "query_limit": 20, "rounds": 3, "warmups": 1}
+    },
+    {
+      "name": "controlled-rich-threads-2",
+      "dataset": "data/controlled-company-screening",
+      "candidates": "configs/candidates/controlled-company-bm25.json",
+      "representation": "rich",
+      "models": ["ettin-17m", "ettin-32m", "jina-turbo-en", "ettin-68m", "gte-modernbert-base", "ettin-150m"],
+      "speed": {"rerank_depth": 500, "max_length": 512, "threads": 2, "batch_size": 8, "query_limit": 20, "rounds": 3, "warmups": 1}
+    },
+    {
+      "name": "controlled-rich-threads-4",
+      "dataset": "data/controlled-company-screening",
+      "candidates": "configs/candidates/controlled-company-bm25.json",
+      "representation": "rich",
+      "models": ["ettin-17m", "ettin-32m", "jina-turbo-en", "ettin-68m", "gte-modernbert-base", "ettin-150m"],
+      "speed": {"rerank_depth": 500, "max_length": 512, "threads": 4, "batch_size": 8, "query_limit": 20, "rounds": 3, "warmups": 1}
+    },
+    {
+      "name": "controlled-rich-threads-8",
+      "dataset": "data/controlled-company-screening",
+      "candidates": "configs/candidates/controlled-company-bm25.json",
+      "representation": "rich",
+      "models": ["ettin-17m", "ettin-32m", "jina-turbo-en", "ettin-68m", "gte-modernbert-base", "ettin-150m"],
+      "speed": {"rerank_depth": 500, "max_length": 512, "threads": 8, "batch_size": 8, "query_limit": 20, "rounds": 3, "warmups": 1}
+    }
+  ]
+}
