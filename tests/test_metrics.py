@@ -44,3 +44,16 @@ def test_paired_bootstrap_matches_hand_delta_and_is_seeded():
 def test_non_finite_qrel_is_rejected():
     with pytest.raises(ValueError, match="non-finite"):
         evaluate_run({"q": {"d": float("nan")}}, {"q": ["d"]})
+
+
+def test_direct_recall_excludes_partial_matches_and_exploratory_query():
+    result = evaluate_run(
+        {"strict": {"direct": 2, "partial": 1}, "probe": {"another": 2}},
+        {"strict": ["partial", "direct"], "probe": ["another"]},
+        ks=(1, 2), strict_query_ids={"strict"},
+    )
+    assert result["aggregate"]["known_positive_recall@1"] == pytest.approx(.75)
+    assert result["aggregate"]["known_direct_recall@1"] == 0
+    assert result["aggregate"]["known_direct_recall@2"] == 1
+    assert result["per_query"]["probe"]["known_direct_recall@1"] is None
+    assert result["limitations"]["strict_direct_eligible_queries"] == 1

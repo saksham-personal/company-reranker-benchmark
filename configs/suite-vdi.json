@@ -24,7 +24,7 @@
       "name": "scifact-test-r100",
       "dataset": "{work}/datasets/beir-scifact",
       "candidates": "configs/candidates/scifact-bm25.json",
-      "representation": "description_only",
+      "representation": "title_text",
       "models": ["ettin-17m", "ettin-32m", "jina-turbo-en", "ettin-68m", "gte-modernbert-base", "ettin-150m"],
       "quality": {"rerank_depth": 100, "max_length": 512, "threads": 8, "batch_size": 8}
     },

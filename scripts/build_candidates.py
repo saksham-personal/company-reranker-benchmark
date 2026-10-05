@@ -14,7 +14,7 @@ def main() -> None:
     p = argparse.ArgumentParser(description="Freeze candidate pools for reranker evaluation.")
     p.add_argument("dataset", type=Path)
     p.add_argument("output", type=Path)
-    p.add_argument("--representation", default="description_keywords", choices=("description_only", "description_keywords", "rich"))
+    p.add_argument("--representation", default="description_keywords", choices=("description_only", "description_keywords", "title_text", "rich"))
     p.add_argument("--depth", type=int, default=1000)
     p.add_argument("--external-jsonl", type=Path, help="Ordered JSONL rows: {query_id, doc_ids:[...]}; no qrel-positive injection")
     a = p.parse_args()

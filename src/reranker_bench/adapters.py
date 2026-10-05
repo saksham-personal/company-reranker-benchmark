@@ -90,6 +90,11 @@ class PairScorer:
             self.score_semantics = "raw sequence-classification logit; rank within a query only"
         else:
             raise ModelValidationError(f"Unsupported loader: {self.kind}")
+        backbone = self.model.model if self.kind == "sentence_transformers" else self.model
+        backbone.to(device="cpu", dtype=torch.float32).eval()
+        self.precision = str(next(backbone.parameters()).dtype).removeprefix("torch.")
+        if self.precision != "float32":
+            raise ModelValidationError(f"Expected float32 CPU weights, found {self.precision}")
 
     def token_lengths(self, pairs: Sequence[tuple[str, str]]) -> list[int]:
         lengths = []

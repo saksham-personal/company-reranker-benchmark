@@ -1,7 +1,7 @@
 import csv
 import json
 
-from reranker_bench.reporting import generate_report
+from reranker_bench.reporting import _comparison_key, generate_report
 
 
 def _quality(status="ok", model="m1", dataset="d1"):
@@ -45,3 +45,11 @@ def test_report_preserves_failures_mixed_comparison_groups_and_public_refs(tmp_p
         paired_rows = list(csv.DictReader(handle))
     assert len(paired_rows) == 12  # six metrics for each of two valid quality rows
     assert all(row["n"] == "1" for row in paired_rows)
+
+
+def test_comparison_key_separates_text_and_query_workloads():
+    baseline = _quality()
+    rich = {**baseline, "representation": "rich"}
+    subset = {**baseline, "query_ids_sha256": "different"}
+    assert _comparison_key(baseline) != _comparison_key(rich)
+    assert _comparison_key(baseline) != _comparison_key(subset)

@@ -12,17 +12,18 @@ from .metrics import paired_bootstrap
 
 QUALITY_FIELDS = (
     "model_id", "artifact_id", "dataset_id", "dataset_digest", "candidate_digest",
-    "representation", "runtime", "query_count", "rerank_depth", "retrieve_depth",
+    "representation", "runtime", "precision", "query_count", "query_ids_sha256", "rerank_depth", "retrieve_depth",
     "max_length", "threads", "batch_size", "machine",
 )
 SPEED_FIELDS = (
     "model_id", "artifact_id", "dataset_id", "dataset_digest", "candidate_digest",
-    "representation", "runtime", "query_count", "rerank_depth", "retrieve_depth",
+    "representation", "runtime", "precision", "query_count", "query_ids_sha256", "rerank_depth", "retrieve_depth",
     "max_length", "threads", "batch_size", "machine", "pairs_per_second",
     "query_latency_p50_ms", "query_latency_p95_ms", "peak_rss_mb", "token_histogram", "elapsed_s",
 )
 COMPARE_FIELDS = (
-    "dataset_id", "dataset_digest", "candidate_digest", "machine", "runtime",
+    "dataset_id", "dataset_digest", "candidate_digest", "machine", "runtime", "precision",
+    "representation", "query_count", "query_ids_sha256",
     "threads", "batch_size", "max_length", "rerank_depth", "retrieve_depth",
 )
 

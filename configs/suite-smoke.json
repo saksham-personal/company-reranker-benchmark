@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "machine_role": "smoke",
+  "description": "Short installation check only; exploratory diagnostics, not a model comparison.",
+  "jobs": [
+    {
+      "name": "long-context-smoke",
+      "dataset": "data/long-context-adversarial",
+      "candidates": "configs/candidates/long-context-bm25.json",
+      "representation": "rich",
+      "models": ["ettin-17m"],
+      "quality": {"rerank_depth": 8, "max_length": 512, "threads": 2, "batch_size": 4},
+      "speed": {"rerank_depth": 8, "max_length": 512, "threads": 2, "batch_size": 4, "query_limit": 2, "rounds": 1, "warmups": 0}
+    }
+  ]
+}

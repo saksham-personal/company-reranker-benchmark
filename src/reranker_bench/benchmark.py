@@ -1,5 +1,7 @@
 """Two-stage CPU evaluation with frozen stage-one candidates."""
 from __future__ import annotations
+import hashlib
+import json
 import math
 import os
 import statistics
@@ -35,7 +37,7 @@ def _load(dataset_path, candidates_path, representation):
     return dataset, candidates
 
 def _metadata(model_id, scorer, dataset, candidates_path, representation,
-              query_count, rerank_depth, retrieve_depth, batch_size, machine_role):
+              query_ids, rerank_depth, retrieve_depth, batch_size, machine_role):
     observed_hardware = hardware(machine_role)
     candidate_manifest = read_json(candidates_path)
     stable_hardware = {key: observed_hardware[key] for key in
@@ -45,7 +47,8 @@ def _metadata(model_id, scorer, dataset, candidates_path, representation,
             "candidate_digest": sha256(candidates_path), "representation": representation,
             "candidate_representation": candidate_manifest.get("representation"),
             "retriever": candidate_manifest.get("retriever"),
-            "runtime": "pytorch-cpu", "precision": "fp32", "query_count": query_count,
+            "runtime": "pytorch-cpu", "precision": scorer.precision, "query_count": len(query_ids),
+            "query_ids_sha256": hashlib.sha256(json.dumps(sorted(query_ids), separators=(",", ":")).encode()).hexdigest(),
             "rerank_depth": rerank_depth, "retrieve_depth": retrieve_depth,
             "max_length": scorer.max_length, "threads": scorer.threads, "batch_size": batch_size,
             "machine": stable_hardware, "available_ram_at_start_bytes": observed_hardware["available_ram_bytes"],
@@ -113,8 +116,10 @@ def benchmark_quality(*, model_id, model_root, dataset_path, candidates_path, ou
                                   "original_prefix_length": depth,
                                   "scores_top10": [{"doc_id": did, "raw_score": scores[original.index(did)]}
                                                    for did in ordered[:min(10, depth)]]}
+    strict_ids = {qid for qid in qids if dataset.queries[qid].get("evaluation_role") == "strict_screening"}
     eval_kwargs = {"complete": bool(dataset.metadata.get("qrels_complete", False)),
-                   "categories": {qid: dataset.queries[qid].get("category", "unclassified") for qid in qids}}
+                   "categories": {qid: dataset.queries[qid].get("category", "unclassified") for qid in qids},
+                   "strict_query_ids": strict_ids if any("evaluation_role" in dataset.queries[qid] for qid in qids) else None}
     selected_qrels = {qid: dataset.qrels[qid] for qid in qids if qid in dataset.qrels}
     metrics = {"baseline": evaluate_run(selected_qrels, baseline, **eval_kwargs),
                "reranked": evaluate_run(selected_qrels, reranked, **eval_kwargs),
@@ -130,7 +135,7 @@ def benchmark_quality(*, model_id, model_root, dataset_path, candidates_path, ou
             "baseline": sum(sum(annotated.get((qid, did)) == "unknown" for did in baseline[qid][:cutoff]) for qid in baseline),
             "reranked": sum(sum(annotated.get((qid, did)) == "unknown" for did in reranked[qid][:cutoff]) for qid in reranked)}
     retrieve_depth = max((len(ids) for ids in candidates.values()), default=0)
-    result = {**_metadata(model_id, scorer, dataset, candidates_path, representation, len(qids),
+    result = {**_metadata(model_id, scorer, dataset, candidates_path, representation, qids,
                           rerank_depth, retrieve_depth, batch_size, machine_role),
               "type": "quality", "status": "passed" if len(qids) == len(dataset.queries) else "exploratory_partial_queries",
               "validation": gate, "metrics": metrics, "per_query_timings": score_times,
@@ -207,7 +212,7 @@ def benchmark_speed(*, model_id, model_root, dataset_path, candidates_path, outp
         stop.set()
         sampler.join(timeout=1)
     retrieve_depth = max((len(ids) for ids in candidates.values()), default=0)
-    result = {**_metadata(model_id, scorer, dataset, candidates_path, representation, len(qids),
+    result = {**_metadata(model_id, scorer, dataset, candidates_path, representation, qids,
                           rerank_depth, retrieve_depth, batch_size, machine_role),
               "type": "speed", "status": "passed" if len(qids) == len(dataset.queries) and rounds >= 3 else "exploratory_short_run",
               "validation": gate, "speed": {"pairs_per_second": total_pairs / total_seconds,

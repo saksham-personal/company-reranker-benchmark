@@ -32,6 +32,8 @@ class Dataset:
         fields = row.get("fields") or {}
         if representation == "description_only":
             value = body
+        elif representation == "title_text":
+            value = " ".join(x for x in (title, body) if x)
         elif representation == "description_keywords":
             kws = fields.get("keywords", row.get("keywords", []))
             if isinstance(kws, str):

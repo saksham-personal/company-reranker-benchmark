@@ -62,6 +62,7 @@ def evaluate_run(
     ks: Sequence[int] = (10, 20, 100, 500, 1000),
     complete: bool = False,
     categories: dict[Any, Any] | None = None,
+    strict_query_ids: set[str] | None = None,
 ) -> dict[str, Any]:
     """Evaluate a run using global known qrels and macro-average eligible queries.
 
@@ -79,7 +80,9 @@ def evaluate_run(
     cat_by_qid = {str(qid): str(cat) for qid, cat in (categories or {}).items()}
     all_qids = list(dict.fromkeys([*judgments.keys(), *normalized_runs.keys()]))
 
-    metric_names = [f"ndcg@{k}" for k in cutoffs] + [f"known_positive_recall@{k}" for k in cutoffs] + ["mrr"]
+    metric_names = ([f"ndcg@{k}" for k in cutoffs] +
+                    [f"known_positive_recall@{k}" for k in cutoffs] +
+                    [f"known_direct_recall@{k}" for k in cutoffs] + ["mrr"])
     if complete:
         metric_names += [f"precision@{k}" for k in cutoffs] + [f"map@{k}" for k in cutoffs]
     per_query: dict[str, dict[str, Any]] = {}
@@ -91,6 +94,8 @@ def evaluate_run(
         has_judgments = qid in judgments
         qrel = judgments.get(qid, {})
         positive = {did for did, rel in qrel.items() if rel > 0}
+        direct = {did for did, rel in qrel.items() if rel >= 2}
+        strict_eligible = bool(direct) and (strict_query_ids is None or qid in strict_query_ids)
         run = normalized_runs.get(qid, [])
         if not has_judgments:
             status = "unknown_qrels"
@@ -109,6 +114,8 @@ def evaluate_run(
                 idcg = _dcg(ideal)
                 item[f"ndcg@{k}"] = _dcg(gains) / idcg if idcg else 0.0
                 item[f"known_positive_recall@{k}"] = len(positive.intersection(prefix)) / len(positive)
+                item[f"known_direct_recall@{k}"] = (len(direct.intersection(prefix)) / len(direct)
+                                                       if strict_eligible else None)
                 if complete:
                     item[f"precision@{k}"] = len(positive.intersection(prefix)) / k
                     item[f"map@{k}"] = _average_precision(prefix, positive)
@@ -125,7 +132,7 @@ def evaluate_run(
 
     aggregate: dict[str, float | None] = {}
     for metric in metric_names:
-        values = [per_query[qid][metric] for qid in eligible]
+        values = [per_query[qid][metric] for qid in eligible if isinstance(per_query[qid].get(metric), (int, float))]
         aggregate[metric] = sum(values) / len(values) if values else None
     category_metrics: dict[str, dict[str, Any]] = {}
     for category in sorted(set(cat_by_qid.values())):
@@ -133,7 +140,8 @@ def evaluate_run(
         category_metrics[category] = {
             "query_count": len(qids),
             "aggregate": {
-                metric: (sum(per_query[qid][metric] for qid in qids) / len(qids) if qids else None)
+                metric: ((sum(values) / len(values)) if (values := [per_query[qid][metric] for qid in qids
+                                                         if isinstance(per_query[qid].get(metric), (int, float))]) else None)
                 for metric in metric_names
             },
         }
@@ -149,6 +157,9 @@ def evaluate_run(
             "excluded_queries": {qid: per_query[qid]["status"] for qid in all_qids if per_query[qid]["status"] != "eligible"},
             "unjudged_documents": "treated as zero gain for nDCG; not assumed non-relevant in recall",
             "recall_label": "known_positive_recall; completeness depends on qrels",
+            "strict_direct_recall_label": "known_direct_recall: relevance >= 2 and strict-query eligible only",
+            "strict_direct_eligible_queries": sum(bool({did for did, rel in judgments.get(qid, {}).items() if rel >= 2})
+                                                  and (strict_query_ids is None or qid in strict_query_ids) for qid in eligible),
             "precision_map_available": bool(complete),
         },
         "coverage": {

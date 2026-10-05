@@ -30,7 +30,7 @@ def main(argv=None):
         p.add_argument("--dataset", type=Path, required=True)
         p.add_argument("--candidates", type=Path, required=True)
         p.add_argument("--output", type=Path, required=True)
-        p.add_argument("--representation", choices=("description_only", "description_keywords", "rich"), default="description_keywords")
+        p.add_argument("--representation", choices=("description_only", "description_keywords", "title_text", "rich"), default="description_keywords")
         p.add_argument("--rerank-depth", type=int, default=500)
         p.add_argument("--max-length", type=int, default=512)
         p.add_argument("--threads", type=int, default=4)

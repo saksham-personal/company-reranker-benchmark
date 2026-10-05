@@ -30,6 +30,8 @@ D:\RerankerBench\.venv\Scripts\python.exe scripts/run_suite.py --work-dir D:\Rer
 
 The suite runs jobs serially in fresh CPU processes. It stores raw JSON and logs in `results/raw/` and produces `reports/REPORT.md` plus CSVs. Re-run with `--force` only when you intend to replace prior measurements. Start with [the VDI guide](docs/VDI_GUIDE.md) for setup checks and staged runs.
 
+For a quick installation check before the full suite, run `D:\RerankerBench\.venv\Scripts\python.exe scripts/run_suite.py --plan configs\suite-smoke.json --work-dir D:\RerankerBench --results D:\RerankerBench\smoke-results`. This short synthetic result is exploratory.
+
 ## Evaluation design
 
 For each query, stage one retrieves up to 1,000 companies. Each model scores `(screening criteria, one company record)` pairs for the **original top 500**, sorts that prefix, and leaves ranks 501 onward untouched. The reranker cannot recover a relevant company missing from stage one's top 500. All models receive the same frozen candidate IDs and chosen text representation. These BM25 pools are a reproducible fallback, not a claim that BM25 matches your current embedding stage. Replace them with exported ordered runs from the actual embedding system for production transfer.
