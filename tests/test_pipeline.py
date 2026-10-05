@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from pathlib import Path
 
 import pytest
@@ -52,3 +53,14 @@ def test_unknown_long_context_cases_are_not_negative_qrels():
     unknown = [(row["query_id"], row["doc_id"]) for row in rows if row["label"] == "unknown"]
     assert unknown
     assert all(did not in data.qrels.get(qid, {}) for qid, did in unknown)
+
+
+def test_annotation_change_invalidates_dataset_digest(tmp_path):
+    source = ROOT / "data" / "long-context-adversarial"
+    for file in source.iterdir():
+        if file.is_file():
+            shutil.copy2(file, tmp_path / file.name)
+    before = load_dataset(tmp_path).digest
+    annotation = tmp_path / "decision_annotations.jsonl"
+    annotation.write_bytes(annotation.read_bytes().replace(b'"unknown"', b'"excluded"', 1))
+    assert load_dataset(tmp_path).digest != before

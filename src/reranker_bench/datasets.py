@@ -113,8 +113,10 @@ def load_dataset(path: str | Path) -> Dataset:
             if did in qrels.setdefault(qid, {}):
                 raise DatasetError(f"duplicate qrel: {qid}/{did}")
             qrels[qid][did] = score
-    dataset = Dataset(metadata, corpus, queries, qrels,
-                      _digest([root / "dataset.json", root / "corpus.jsonl", root / "queries.jsonl", root / "qrels.tsv"]))
+    identity_files = [root / "dataset.json", root / "corpus.jsonl", root / "queries.jsonl", root / "qrels.tsv"]
+    identity_files.extend(root / name for name in ("decision_annotations.jsonl", "hard_negatives.jsonl")
+                          if (root / name).is_file())
+    dataset = Dataset(metadata, corpus, queries, qrels, _digest(identity_files))
     validate_dataset(dataset)
     return dataset
 

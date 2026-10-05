@@ -1,5 +1,5 @@
 {
-  "dataset_digest": "ac6d98aad4a86d89b635f9c887df97edb9c1c13d495bafd480be6cc2825ade85",
+  "dataset_digest": "066f03e59d99d4600e6d1b6d6c95e2c2a4dae001c24f48ed9d1fb88810986932",
   "representation": "description_keywords",
   "retrieve_k": 1000,
   "retriever": {

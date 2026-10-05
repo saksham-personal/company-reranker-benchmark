@@ -20,3 +20,11 @@ def test_only_matching_successful_result_is_reused(tmp_path):
     assert run_suite._reusable(target, "a", "quality")
     assert not run_suite._reusable(target, "b", "quality")
     assert not run_suite._reusable(target, "a", "speed")
+
+
+def test_signature_changes_with_model_configuration_and_hardware():
+    args = (["python", "quality"], "dataset", "candidates", "asset", "code")
+    baseline = run_suite._run_signature(*args, {"loader": "transformers"}, {"cpu": "A", "ram": 16})
+    assert baseline != run_suite._run_signature(*args, {"loader": "sentence_transformers"}, {"cpu": "A", "ram": 16})
+    assert baseline != run_suite._run_signature(*args, {"loader": "transformers"}, {"cpu": "B", "ram": 16})
+    assert baseline != run_suite._run_signature(*args, {"loader": "transformers"}, {"cpu": "A", "ram": 32})

@@ -5,7 +5,6 @@ import hashlib
 import importlib.metadata
 import json
 import os
-import platform
 import subprocess
 import sys
 from pathlib import Path
@@ -13,17 +12,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from reranker_bench.adapters import verify_model_files
-from reranker_bench.common import read_json, sha256, timestamp, write_json
+from reranker_bench.common import hardware, read_json, sha256, timestamp, write_json
 from reranker_bench.datasets import load_dataset
 
 CODE_FILES = ("adapters.py", "benchmark.py", "cli.py", "common.py", "datasets.py", "metrics.py", "retrieval.py", "reporting.py")
 
 
 def _run_signature(command: list[str], dataset_digest: str, candidate_digest: str,
-                   model_asset_sha: str, code_digest: str) -> str:
+                   model_asset_sha: str, code_digest: str, model_config: dict,
+                   machine: dict) -> str:
     payload = {"command": command, "dataset_digest": dataset_digest,
                "candidate_digest": candidate_digest, "model_asset_sha": model_asset_sha,
-               "code_digest": code_digest, "hostname": platform.node(), "python": sys.version,
+               "code_digest": code_digest, "model_config": model_config, "machine": machine,
+               "python": sys.version,
                "packages": {name: importlib.metadata.version(name) for name in
                             ("torch", "transformers", "sentence-transformers", "numpy")}}
     return hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
@@ -44,6 +45,10 @@ def run_suite(plan_path: Path, work_dir: Path, results_dir: Path, *, force=False
     assets = {a["id"]: a for a in read_json(ROOT / "configs" / "assets.json")["assets"] if a["kind"] == "model"}
     code_digest = hashlib.sha256(("".join(sha256(ROOT / "src" / "reranker_bench" / name)
                                              for name in CODE_FILES) + sha256(Path(__file__))).encode()).hexdigest()
+    observed = hardware(plan.get("machine_role", "vdi"))
+    stable_machine = {key: observed[key] for key in
+                      ("role", "hostname", "os", "architecture", "processor", "logical_cores",
+                       "physical_cores", "ram_bytes", "python", "packages")}
     verified_models: set[str] = set()
     if plan.get("schema_version") != 1 or not isinstance(plan.get("jobs"), list):
         raise ValueError("Invalid suite plan")
@@ -81,7 +86,8 @@ def run_suite(plan_path: Path, work_dir: Path, results_dir: Path, *, force=False
                     cmd += ["--rounds", str(options.get("rounds", 3)),
                             "--warmups", str(options.get("warmups", 1))]
                 signature = _run_signature(cmd, dataset_digest, candidate_digest,
-                                           assets[model]["archive_sha256"], code_digest)
+                                           assets[model]["archive_sha256"], code_digest,
+                                           catalog[model], stable_machine)
                 if output.exists() and not force and _reusable(output, signature, stage):
                     if model not in verified_models:
                         verify_model_files(model, work_dir / "models")
